@@ -40,8 +40,11 @@ map gp :bp!<cr>
 map gd :bd<cr> 
 inoremap <C-e> <Esc>A
 inoremap <C-a> <Esc>I
+inoremap <C-d> <Esc>:update<CR>
+noremap <C-d> <Esc>:update<CR>
 
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme = 'murmur'
+let g:syntastic_ruby_checkers=['rubocop']
 colorscheme molokai
