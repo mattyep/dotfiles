@@ -1,37 +1,46 @@
-execute pathogen#infect()
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+Plugin 'bling/vim-airline'
+Plugin 'kien/ctrlp.vim'
+Plugin 'wellsjo/wells-colorscheme.vim'
+Plugin 'tomasr/molokai'
+Plugin 'elzr/vim-json'
+Plugin 'tpope/vim-fugitive'
+Plugin 'justinmk/vim-sneak'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'edkolev/tmuxline.vim'
+Plugin 'scrooloose/syntastic'
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+
 set number
-set mouse=a
 set smartindent
 set tabstop=2
 set shiftwidth=2
 set expandtab
-set guifont=Inconsolata\ for\ Powerline
 set laststatus=2
 set hls
-noremap <silent> <C-n> :NERDTree<CR>
-noremap <silent> <C-j> :NERDTreeClose<CR>
-noremap <silent> <C-k> :q!<CR>
-noremap <silent> <C-s> :update<CR>
-vnoremap <silent> <C-s> <C-C>:update<CR>
-inoremap <silent> <C-s> <C-O>:update<CR>
-nmap <Space> i
-nmap <C-Space> <Esc>
-imap jj <Esc>
+
+imap jk <Esc>
 map gn :bn!<cr>
 map gp :bp!<cr>
 map gd :bd<cr> 
-map <F7> :call g:RubyDebugger.step()<CR>
-map <F5> :call g:RubyDebugger.next()<CR>
-map <F8> :call g:RubyDebugger.continue()<CR>
-let g:airline_theme             = 'bubblegum'
-let g:airline_enable_branch     = 1
-let g:airline_enable_syntastic  = 1
-let g:airline_powerline_fonts 	= 1
-let g:airline#extensions#tabline#enabled = 1
-let g:syntastic_coffee_checkers = ['coffeelint', 'coffee']
-let g:syntastic_enable_signs=1
-let g:syntastic_error_symbol='✗'
-let g:syntastic_warning_symbol='⚠'
-set t_Co=256 
-colorscheme molokai
+inoremap <C-e> <Esc>A
+inoremap <C-a> <Esc>I
 
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme = 'murmur'
+colorscheme molokai
